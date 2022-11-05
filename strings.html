@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Press me</button>
+    <p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+<button onclick=myFunction()>Try it</button>
+
+<p id="demo">Please visit Microsoft!</p>
+    <script>
+        let strg="Hey there"
+        const sglDbl = 'Would you eat a "fish supper"?';
+        const dblSgl = "I'm feeling blue.";
+        const name = 'Chris';
+        const greeting = `Hello, ${name}`;
+        const myNum2 = 123;
+        const myString2 = myNum2.toString();
+        let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let length = txt.length;
+        let str = "Apple, Banana, Kiwi";
+        let part = str.slice(7, 13);
+        console.log(greeting);
+        console.log(sglDbl);
+        console.log(dblSgl);
+        console.log(strg);
+        console.log(length);
+        console.log(part);
+        const button = document.querySelector('button');
+        console.log(typeof myString2);
+        function myFunction(){
+            let text= document.getElementById("demo").innerHTML;
+            document.getElementById("demo").innerHTML = text.replace("Microsoft", "Uganda");
+            }
+            function greet(){
+                const name = prompt("What is your name");
+                alert = welcome, ${name};
+            }
+    </script>
+</body>
+</html>
