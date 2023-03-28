@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+          background-color: green;
+          color: white;
+          font-weight: bold;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .btn2 {
+          background-color: green;
+          color: white;
+          font-weight: bold;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+    </style>      
+</head>
+<body>
+    <form action="">
+        <div>
+            <label>Company ID</label>
+            <input type="button" value="Available" class="btn" onclick="handleClick(this)" id="CompID">  
+        </div>
+        <div>
+            <label>Request Letter</label>
+            <input type="button" value="Available" class="btn" onclick="handleClick(this)" id="RequestLetter">  
+        </div>
+        <div>
+            <label>Company Directors</label>
+            <input type="button" value="Available" class="btn" onclick="handleClick(this)" id="CompanyDirector">  
+        </div>
+        <div>
+            <label>Cert of Inco</label>
+            <input type="button" value="Available" class="btn" onclick="handleClick(this)" id="CertOfInco">  
+        </div>
+        <div>
+            <label>Tin</label>
+            <input type="button" value="Available" class="btn" onclick="handleClick(this)" id="TIN">  
+        </div>
+        <div>
+            <label>Trading License</label>
+            <input type="button" value="Available" class="btn" onclick="handleClick(this)" id="TradingLicense">  
+        </div>
+        <input type="button" value="KYC" style="background-color: green;" class="btn2" id="KYC_Status" onclick="KycStatus()">
+    </form>
+    <script>
+        function handleClick(button) {
+            if (button.value == "Available") {
+                button.value = "Missing";
+                button.style.backgroundColor = "red";
+            } else if (button.value == "Missing") {
+                button.value = "Optional";
+                button.style.backgroundColor = "yellow";
+            } else {
+                button.value = "Available";
+                button.style.backgroundColor = "green";
+            }
+            // Call the function to initially set the KYC Status button
+        KycStatus();
+        }
+        
+        
+
+        function KycStatus() {
+            var buttons = document.getElementsByClassName("btn");
+            var allAvailableOrOptional = true;
+
+            for (var i = 0; i < buttons.length; i++) {
+                if (buttons[i].value != "Available" && buttons[i].value != "Optional") {
+                    allAvailableOrOptional = false;
+                    break;
+                }
+            }
+            if (allAvailableOrOptional) {
+    document.getElementById("KYC_Status").value = "KYC";
+    document.getElementById("KYC_Status").style.backgroundColor = "Green";
+} else {
+    document.getElementById("KYC_Status").value = "NKYC";
+    document.getElementById("KYC_Status").style.backgroundColor = "Red";
+}
+        }
+     // Call the function to initially set the KYC Status button
+KycStatus();   
+        
+    </script>
+</body>
+</html>
